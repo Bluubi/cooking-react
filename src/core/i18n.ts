@@ -12,16 +12,16 @@ i18n
             en: {
                 translation: {
                     home: {
-                        "welcomeToCooking": "Welcome to <strong>Cooking React</strong>",
-                        "guest": "Log as guest",
+                        welcomeToCooking: "Welcome to <strong>Cooking React</strong>",
+                        guest: "Log as guest",
                     }
                 }
             },
             es: {
                 translation: {
                     home: {
-                        "welcomeToCooking": "Bienvenido a <strong className='text-'>Cooking React</strong>",
-                        "guest": "Entrar como invitado",
+                        welcomeToCooking: "Bienvenido a <strong>Cooking React</strong>",
+                        guest: "Entrar como invitado",
                     }
                 }
             },
