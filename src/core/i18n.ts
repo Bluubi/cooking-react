@@ -14,6 +14,9 @@ i18n
                     home: {
                         welcomeToCooking: "Welcome to <strong>Cooking React</strong>",
                         guest: "Log as guest",
+                    },
+                    index: {
+                        discoverRecipes: "Discover all our recipes starting with the letter {{letter}}"
                     }
                 }
             },
@@ -22,6 +25,9 @@ i18n
                     home: {
                         welcomeToCooking: "Bienvenido a <strong>Cooking React</strong>",
                         guest: "Entrar como invitado",
+                    },
+                    index: {
+                        discoverRecipes: "Descubre todas nuestras recetas que empiezan por la letra <strong>{{letter}}</strong>"
                     }
                 }
             },
