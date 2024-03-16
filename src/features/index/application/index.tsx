@@ -27,16 +27,24 @@ export function Index(){
 
 
 
-    return (<section>
-        <h1 className={'text-3xl p-2'}> <Trans i18nKey={'index.discoverRecipes'}>
-            {{ letter: getFirstDayWeekLetter() }}
-        </Trans> </h1>
-        <div className={'flex overflow-x-auto'}> {
-            data?.meals.map( recipe => {
-                return (<Card id={recipe.idMeal} title={recipe?.strMeal} image={ recipe && recipe.strMeal} />)})
-            }
-        </div>
+    return (
+        <section>
+            <article>
+                Main article
+            </article>
+            <article>
+                <h1 className={'text-3xl p-2'}><Trans i18nKey={'index.discoverRecipes'}>
+                    {{letter: getFirstDayWeekLetter()}}
+                </Trans></h1>
+                <div className={'flex overflow-x-auto'}> {
+                    data?.meals.map(recipe => {
+                        return (
+                            <Card id={recipe.idMeal} title={recipe?.strMeal} image={recipe && recipe.strMealThumb}/>)
+                    })
+                }
+                </div>
+            </article>
 
-            </section>)
-            }
+        </section>)
+}
 
