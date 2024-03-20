@@ -35,7 +35,7 @@ export function Index(){
         <section>
             <Meal meals={data}></Meal>
             <article>
-                <h1 className={'text-3xl p-2'}><Trans i18nKey={'index.discoverRecipes'}>
+                <h1 className={'text-3xl p-10'}><Trans i18nKey={'index.discoverRecipes'}>
                     {{letter: getFirstDayWeekLetter()}}
                 </Trans></h1>
                 <div className={'flex overflow-x-auto'}> {
