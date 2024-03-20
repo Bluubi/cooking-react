@@ -16,7 +16,7 @@ i18n
                         guest: "Log as guest",
                     },
                     index: {
-                        discoverRecipes: "Discover all our recipes starting with the letter {{letter}}"
+                        discoverRecipes: "Discover all our recipes starting with the letter <strong>{{letter}}</strong>"
                     }
                 }
             },

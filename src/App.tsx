@@ -23,7 +23,7 @@ function App() {
             <div className={'flex flex-wrap justify-center items-center w-lvw'}>
                 <h1 className={'text-6xl text-center'}> <Trans i18nKey='home.welcomeToCooking' /></h1>
                 <div className={'flex flex-wrap gap-x-2 justify-center'}>
-                    <Link className={'text-lime-50 text-center hover:cursor-pointer p-2 bg-lime-600 rounded-md'} to={'index'} > <Trans i18nKey={'home.guest'} /> </Link>
+                    <Link className={'text-emerald-50 text-center hover:cursor-pointer p-2 bg-emerald-600 rounded-md'} to={'index'} > <Trans i18nKey={'home.guest'} /> </Link>
                     <GoogleLogin onSuccess={()=> { console.log('logged!')}} onError={() => { console.log('error!')}} />
                 </div>
             </div>
