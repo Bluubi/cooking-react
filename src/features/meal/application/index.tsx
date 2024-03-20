@@ -4,6 +4,7 @@ import {setCookie} from "../../../utils/cookies/set.ts";
 import {getCookie} from "../../../utils/cookies/get.ts";
 import {MealRecipe} from "../domain/Meal.ts";
 import {Card} from "../../../components/card";
+import brushSVG from '../../../assets/brush.svg';
 
 interface MealProps {
     meals: Meals | undefined
@@ -11,7 +12,7 @@ interface MealProps {
 
 export const Meal = ({ meals }: MealProps) => {
 
-    const [ meal, setMeal ] = useState<MealRecipe>({meal: {}})
+    const [ meal, setMeal ] = useState<MealRecipe>()
     const setRecipeForDay = () => {
     const cookie = getCookie('recipeForDay');
     console.log(cookie);
@@ -36,7 +37,6 @@ export const Meal = ({ meals }: MealProps) => {
     }, []);
 
     return (<article >
-        <Card id={meal.idMeal} title={meal.strMeal} image={meal.strMealThumb} cardType={'UNIQUE'}/>
-        <h2 className={'text-2xl absolute top-0 p-3.5'}> Hoy te recomendamos... </h2>
+        <Card id={meal?.idMeal} title={meal?.strMeal} image={meal?.strMealThumb} cardType={'UNIQUE'}/>
     </article>)
 }
