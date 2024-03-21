@@ -3,6 +3,7 @@ import {Meals} from "../../meals/domain/Meals.ts";
 import {Trans} from "react-i18next";
 import {Card} from "../../../components/card";
 import {Meal} from "../../meal/application";
+import {Topnav} from "../../topnav";
 
 const weekDays =  ['m','t','w','t','f','s','s']
 export function Index(){
@@ -33,6 +34,7 @@ export function Index(){
 
     return (
         <section>
+            <Topnav />
             <Meal meals={data}></Meal>
             <article>
                 <h1 className={'text-3xl p-10'}><Trans i18nKey={'index.discoverRecipes'}>

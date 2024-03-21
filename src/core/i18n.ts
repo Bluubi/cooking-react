@@ -14,10 +14,19 @@ i18n
                     home: {
                         welcomeToCooking: "Welcome to <strong>Cooking React</strong>",
                         guest: "Log as guest",
+                        registerInCookingReact: "Register at Cooking React",
+                        loginAtCookingReact: "Login"
                     },
                     index: {
                         discoverRecipes: "Discover all our recipes starting with the letter <strong>{{letter}}</strong>"
-                    }
+                    },
+                    topnav: {
+                        favourites: "My favourite recipes",
+                        lookByFirstLetter: "Search by first letter",
+                        loginAtCookingReact: "Iniciar sesión"
+
+                    },
+
                 }
             },
             es: {
@@ -25,10 +34,15 @@ i18n
                     home: {
                         welcomeToCooking: "Bienvenido a <strong>Cooking React</strong>",
                         guest: "Entrar como invitado",
+                        registerInCookingReact: "Registrarse en Cooking React"
                     },
                     index: {
                         discoverRecipes: "Descubre todas nuestras recetas que empiezan por la letra <strong>{{letter}}</strong>"
-                    }
+                    },
+                    topnav: {
+                        favourites: "Mis recetas favoritas",
+                        lookByFirstLetter: "Buscar por la primera letra"
+                    },
                 }
             },
         },

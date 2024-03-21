@@ -5,6 +5,10 @@ import bg2 from './assets/bg2.jpg';
 import bg3 from './assets/bg3.jpg';
 import {GoogleLogin} from "@react-oauth/google";
 import {Link} from "react-router-dom";
+import {setCookie} from "./utils/cookies/set.ts";
+import {RegisterForm} from "./features/register-form/application";
+import {ModalComponent} from "./components/modal";
+import {useState} from "react";
 
 function App() {
 
@@ -13,6 +17,9 @@ function App() {
 
 
     const {t} = useTranslation();
+
+    const [ open, setOpen ] = useState<boolean>(false);
+    const [ alreadyHaveAnAccount, setAlreadyHaveAnAccount ] = useState<boolean>(false);
 
   return (
     <h1>
@@ -23,10 +30,39 @@ function App() {
             <div className={'flex flex-wrap justify-center items-center w-lvw'}>
                 <h1 className={'text-6xl text-center'}> <Trans i18nKey='home.welcomeToCooking' /></h1>
                 <div className={'flex flex-wrap gap-x-2 justify-center'}>
-                    <Link className={'text-emerald-50 text-center hover:cursor-pointer p-2 bg-emerald-600 rounded-md'} to={'index'} > <Trans i18nKey={'home.guest'} /> </Link>
-                    <GoogleLogin onSuccess={()=> { console.log('logged!')}} onError={() => { console.log('error!')}} />
+                    <Link className={'text-emerald-50 text-center hover:cursor-pointer p-2 bg-emerald-600 rounded-md'}
+                          to={'index'}> <Trans i18nKey={'home.guest'}/> </Link>
+                    <GoogleLogin onSuccess={(value) => {
+                        console.log(value);
+                        setCookie('auth', 7, value)
+                    }} onError={() => {
+                        console.log('error!')
+                    }}/>
+                    <button className={'mt-3'}
+                            onClick={() => setAlreadyHaveAnAccount(!alreadyHaveAnAccount)}> {alreadyHaveAnAccount ? '¿No tienes cuenta?' : 'Haz click aquí para loguearte'}</button>
+
+                    {
+                        !alreadyHaveAnAccount ?
+                            <button
+                                className={'mt-8 bg-emerald-600 p-3.5 rounded-md text-white text-center hover:cursor-pointer hover:bg-emerald-950'}
+                                onClick={() => setOpen(!open)}>
+                                <Trans i18nKey={'home.loginAtCookingReact'}/>
+                            </button>
+                            :
+                            <button
+                                className={'w-full mt-8 bg-emerald-600 p-3.5 rounded-md text-white text-center hover:cursor-pointer hover:bg-emerald-950'}
+                                onClick={() => setOpen(!open)}>
+                                <Trans i18nKey={'home.registerInCookingReact'}/>
+                            </button>
+                    }
                 </div>
             </div>
+
+
+            <ModalComponent isOpen={open} setOpen={setOpen}>
+                <RegisterForm/>
+            </ModalComponent>
+
         </section>
     </h1>
   )
