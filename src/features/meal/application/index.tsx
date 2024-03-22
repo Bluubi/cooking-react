@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {setCookie} from "../../../utils/cookies/set.ts";
 import {getCookie} from "../../../utils/cookies/get.ts";
 import {MealRecipe} from "../domain/Meal.ts";
-import {Card} from "../../../components/card";
+import {SpecialCard} from "../../../components/card/special";
 
 interface MealProps {
     meals: Meals | undefined
@@ -14,9 +14,8 @@ export const Meal = ({ meals }: MealProps) => {
     const [ meal, setMeal ] = useState<MealRecipe>()
     const setRecipeForDay = () => {
     const cookie = getCookie('recipeForDay');
-    console.log(cookie);
     if(cookie !== null) {
-        //setMeal(JSON.parse(cookie));
+        // setMeal(JSON.parse(cookie));
         return null;
     }
         if(meals){
@@ -36,6 +35,6 @@ export const Meal = ({ meals }: MealProps) => {
     }, []);
 
     return (<article >
-        <Card id={meal?.idMeal} title={meal?.strMeal} image={meal?.strMealThumb} cardType={'UNIQUE'}/>
+        <SpecialCard id={meal?.idMeal} title={meal?.strMeal} image={meal?.strMealThumb}/>
     </article>)
 }
