@@ -1,9 +1,10 @@
 import {useEffect, useState} from "react";
 import {Meals} from "../../meals/domain/Meals.ts";
 import {Trans} from "react-i18next";
-import {Card} from "../../../components/card";
 import {Meal} from "../../meal/application";
 import {Topnav} from "../../topnav";
+import {BaseCard} from "../../../components/card/base";
+import {Link} from "react-router-dom";
 
 const weekDays =  ['m','t','w','t','f','s','s']
 export function Index(){
@@ -40,10 +41,15 @@ export function Index(){
                 <h1 className={'text-3xl p-10'}><Trans i18nKey={'index.discoverRecipes'}>
                     {{letter: getFirstDayWeekLetter()}}
                 </Trans></h1>
-                <div className={'flex overflow-x-auto'}> {
+                <div className={'flex flex-wrap gap-x-10 gap-y-10'}> {
                     data?.meals.map(recipe => {
                         return (
-                            <Card id={recipe.idMeal} title={recipe?.strMeal} image={recipe && recipe.strMealThumb}/>)
+                            <BaseCard key={`card-${recipe.idMeal}`} id={recipe.idMeal ?? ''} shadow={'shadow-md'} position={'relative'}>
+                                {recipe.strMealThumb && recipe?.strMeal && <img src={recipe.strMealThumb} alt={recipe?.strMeal}
+                                                        className={'transform transition-all duration-500 hover:scale-110 hover:cursor-pointer rounded-md'}/>}
+                                <Link className={'text-center font-bold absolute bottom-0 w-full bg-white p-1'} to={''}>{recipe?.strMeal}</Link>
+
+                            </BaseCard>)
                     })
                 }
                 </div>
