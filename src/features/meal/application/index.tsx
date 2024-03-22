@@ -37,7 +37,5 @@ export const Meal = ({ meals }: MealProps) => {
         setRecipeForDay();
     }, [])
 
-    return (<article >
-        <SpecialCard id={meal?.idMeal} title={meal?.strMeal} image={meal?.strMealThumb}/>
-    </article>)
+    return (<SpecialCard id={meal?.idMeal} title={meal?.strMeal} image={meal?.strMealThumb}/>)
 }

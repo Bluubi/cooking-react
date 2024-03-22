@@ -5,7 +5,7 @@ export interface CardProps {
 }
 
 export interface SpecialCardProps {
-    id: string | null;
-    title: string;
-    image: string;
+    id?: string | null;
+    title?: string;
+    image?: string;
 }
