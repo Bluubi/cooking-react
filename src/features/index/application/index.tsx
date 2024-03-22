@@ -41,7 +41,7 @@ export function Index(){
                 <h1 className={'text-3xl p-10'}><Trans i18nKey={'index.discoverRecipes'}>
                     {{letter: getFirstDayWeekLetter()}}
                 </Trans></h1>
-                <div className={'flex flex-wrap gap-x-10 gap-y-10'}> {
+                <div className={'flex flex-wrap gap-10 justify-center'}> {
                     data?.meals.map(recipe => {
                         return (
                             <BaseCard key={`card-${recipe.idMeal}`} id={recipe.idMeal ?? ''} shadow={'shadow-md'} position={'relative'}>
