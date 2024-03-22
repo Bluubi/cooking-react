@@ -33,7 +33,6 @@ function App() {
                     <Link className={'text-emerald-50 text-center hover:cursor-pointer p-2 bg-emerald-600 rounded-md'}
                           to={'index'}> <Trans i18nKey={'home.guest'}/> </Link>
                     <GoogleLogin onSuccess={(value) => {
-                        console.log(value);
                         setCookie('auth', 7, value)
                     }} onError={() => {
                         console.log('error!')
