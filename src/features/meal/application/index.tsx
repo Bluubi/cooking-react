@@ -24,6 +24,7 @@ export const Meal = ({ meals }: MealProps) => {
 
     function setAndGetRandomMeal(meals: Meals | undefined): MealRecipe | undefined {
         const randomMeal = getRandomMeal(meals);
+
         setMeal(randomMeal);
         if(meals){
             if(randomMeal){
@@ -37,5 +38,9 @@ export const Meal = ({ meals }: MealProps) => {
         setRecipeForDay();
     }, [])
 
-    return (<SpecialCard id={meal?.idMeal} title={meal?.strMeal} image={meal?.strMealThumb}/>)
+    return (<>
+            { meal && <SpecialCard id={meal?.idMeal} title={meal?.strMeal} image={meal?.strMealThumb}/>}
+
+    </>
+        )
 }
