@@ -26,18 +26,18 @@ export const RegisterForm = () => {
     }
 
     return (
-        <form className={'p-3.5 bg-white rounded-sm flex flex-wrap justify-center'} onSubmit={(event) => handleSubmit(event)}>
+        <form className={'p-3.5 bg-white rounded-sm flex flex-wrap justify-center gap-3'} onSubmit={(event) => handleSubmit(event)}>
             <div className={'w-full'}>
                 <label> Username </label>
-                <input ref={usernameRef} className={'w-full mt-3 p-2 border-4 rounded-sm'} type={'text'} name={'username'}></input>
+                <input ref={usernameRef} className={'w-full p-2 rounded-sm border-b-2 border-b-emerald-600'} type={'text'} name={'username'}></input>
             </div>
 
             <div className={'w-full'}>
                 <label> Password </label>
-                <input ref={passwordRef} className={'w-full mt-3 p-2 border-4 rounded-sm'} type={'text'} name={'password'}></input>
+                <input type={'password'} ref={passwordRef} className={'w-full p-2 border-b-2 border-b-emerald-600 rounded-sm'} name={'password'}></input>
             </div>
 
-            <button className={'bg-emerald-600 p-3.5 mt-3 text-white rounded-md'}> Registrarse</button>
+            <button className={'bg-emerald-600 p-3.5 text-white rounded-md'}> Registrarse</button>
         </form>
     )
 }
