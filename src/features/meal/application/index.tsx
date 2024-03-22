@@ -14,7 +14,6 @@ export const Meal = ({ meals }: MealProps) => {
     const [ meal, setMeal ] = useState<MealRecipe>()
     const setRecipeForDay = () => {
     const cookie = getCookie('recipeForDay');
-    console.log(cookie);
     if(cookie !== null) {
         // setMeal(JSON.parse(cookie));
         return null;
@@ -36,6 +35,6 @@ export const Meal = ({ meals }: MealProps) => {
     }, []);
 
     return (<article >
-        <SpecialCard id={meal?.idMeal} title={meal?.strMeal} image={meal?.strMealThumb} cardType={'UNIQUE'}/>
+        <SpecialCard id={meal?.idMeal} title={meal?.strMeal} image={meal?.strMealThumb}/>
     </article>)
 }

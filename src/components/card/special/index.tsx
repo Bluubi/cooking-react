@@ -1,6 +1,7 @@
 import {SpecialCardProps} from "../index.ts";
 
 export const SpecialCard = ({id, title, image }: SpecialCardProps) => {
+
     return (<div className={'flex flex-wrap'}
                  key={id}>
         <div className={'w-svw h-72 flex items-end'}>

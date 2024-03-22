@@ -1,7 +1,7 @@
 export interface CardProps {
-    id: string | null;
-    shadow: 'shadow-sm' | 'shadow-md' | 'shadow-lg',
-    position: 'static' | 'relative'
+    id?: string | null;
+    shadow?: 'shadow-sm' | 'shadow-md' | 'shadow-lg',
+    position?: 'static' | 'relative'
 }
 
 export interface SpecialCardProps {
