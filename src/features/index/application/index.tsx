@@ -44,7 +44,7 @@ export function Index(){
                 <div className={'flex flex-wrap gap-x-10 gap-y-10'}> {
                     data?.meals.map(recipe => {
                         return (
-                            <BaseCard id={recipe.idMeal ?? ''} shadow={'shadow-md'} position={'relative'}>
+                            <BaseCard key={`card-${recipe.idMeal}`} id={recipe.idMeal ?? ''} shadow={'shadow-md'} position={'relative'}>
                                 {recipe.strMealThumb && recipe?.strMeal && <img src={recipe.strMealThumb} alt={recipe?.strMeal}
                                                         className={'transform transition-all duration-500 hover:scale-110 hover:cursor-pointer rounded-md'}/>}
                                 <Link className={'text-center font-bold absolute bottom-0 w-full bg-white p-1'} to={''}>{recipe?.strMeal}</Link>
