@@ -4,10 +4,12 @@ import {Trans} from "react-i18next";
 import {Meal} from "../../meal/application";
 import {Topnav} from "../../topnav";
 import {BaseCard} from "../../../components/card/base";
-import {Link} from "react-router-dom";
+import {Link, useLoaderData} from "react-router-dom";
 
 const weekDays =  ['m','t','w','t','f','s','s']
 export function Index(){
+
+    const { isLogged } = useLoaderData();
 
     const [ data, setData] = useState<Meals | undefined >(undefined);
     const [ day, setDay ] = useState<string>()
@@ -15,7 +17,6 @@ export function Index(){
         const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${getFirstDayWeekLetter()}`);
         const json = await response.json() as Meals;
 
-        // document.cookie = 'RecipePerDay'+'='+()
         setDay(day);
         setData(json);
 
@@ -35,7 +36,7 @@ export function Index(){
 
     return (
         <section>
-            <Topnav />
+            <Topnav isLogged={isLogged}/>
             <Meal meals={data}></Meal>
             <article>
                 <h1 className={'text-3xl p-10'}><Trans i18nKey={'index.discoverRecipes'}>
