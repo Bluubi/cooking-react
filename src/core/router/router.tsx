@@ -3,6 +3,7 @@ import App from "../../App.tsx";
 import {Index} from "../../features/index/application";
 import {getCookie} from "../../utils/cookies/get.ts";
 
+const basename = '/cooking-react/';
 export const router = createBrowserRouter([
     { path: '', element: <App />, loader: async () => {
             const cookie = getCookie('login');
@@ -12,5 +13,5 @@ export const router = createBrowserRouter([
             }
             return null;
         }},
-    { path: 'index', element: <Index />}
-])
+    { path: 'index', element: <Index />},
+], {basename})
