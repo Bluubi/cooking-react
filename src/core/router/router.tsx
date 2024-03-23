@@ -2,7 +2,6 @@ import {createBrowserRouter} from "react-router-dom";
 import App from "../../App.tsx";
 import {Index} from "../../features/index/application";
 import {getCookie} from "../../utils/cookies/get.ts";
-
 const basename = '/cooking-react/';
 export const router = createBrowserRouter([
     { path: '', element: <App />, loader: async () => {
@@ -13,5 +12,11 @@ export const router = createBrowserRouter([
             }
             return null;
         }},
-    { path: 'index', element: <Index />},
+    { path: 'index', element: <Index />, loader: async () => {
+            {
+                return {
+                    isLogged: getCookie('login') !== null
+                }
+            }
+        }},
 ], {basename})
