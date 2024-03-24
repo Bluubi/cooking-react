@@ -5,6 +5,7 @@ import {Meal} from "../../meal/application";
 import {Topnav} from "../../topnav";
 import {BaseCard} from "../../../components/card/base";
 import {Link} from "react-router-dom";
+import {SearchByRecipe} from "../../search-by-recipe/application";
 
 const weekDays =  ['m','t','w','t','f','s','s']
 export function Index(){
@@ -37,6 +38,7 @@ export function Index(){
         <section>
             <Topnav />
             <Meal meals={data}></Meal>
+            <SearchByRecipe />
             <article>
                 <h1 className={'text-3xl p-10'}><Trans i18nKey={'index.discoverRecipes'}>
                     {{letter: getFirstDayWeekLetter()}}
