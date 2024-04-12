@@ -11,14 +11,16 @@ i18n
             en: {
                 translation: {
                     index: {
-                        "welcome": "Welcome to Cooking React"
+                        "welcome": "Welcome to Cooking React",
+                        "discoverMore": "Discover more",
                     }
                 }
             },
             es: {
                 translation: {
                     index: {
-                        "welcome": "Bienvenido a Cooking React"
+                        "welcome": "Bienvenido a Cooking React",
+                        "discoverMore": "Descubre más",
                     }
                 }
             }

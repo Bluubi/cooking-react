@@ -1,0 +1,10 @@
+.backgroundImage {
+    background-image: url("/assets/bg1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.titleText {
+    text-shadow: 3px 3px 3px black;
+}
