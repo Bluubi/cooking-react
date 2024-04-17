@@ -2,7 +2,7 @@ import {HomeNav} from "../../elements/wrappers/home-nav";
 import {useEffect, useState} from "react";
 import {MealDTOToModel, MealModel} from "../../features/meal/domain/Meal.ts";
 import {CardMealElement} from "../../elements/card-meal";
-import {articles} from "../../../public/articles/Articles.ts";
+import {Article, articles} from "../../../public/articles/Articles.ts";
 import {CardElement} from "../../elements/card";
 import {CardUser} from "../../elements/card-user";
 
@@ -30,10 +30,10 @@ export const HomePage = () => {
             <section className={'col-start-1 col-span-8'}>
                 <h1 className={'p-6 text-2xl flex-1'}> ¡Las deliciosas recetas de quienes ya cocinan con CookingReact!
                 </h1>
-                <div className={"flex gap-x-10"}>
-                    { articles.map( (article, index) => {
+                <div className={"flex gap-x-10 mt-10"}>
+                    { articles.map( (article: Article, index: number) => {
                         return (
-                                <CardElement key={`card${index}`} user={<CardUser />} text={article}/>)
+                                <CardElement key={`card${index}`} user={<CardUser />} article={article}/>)
 
                     }) }
                 </div>
