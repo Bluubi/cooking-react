@@ -1,0 +1,29 @@
+.animationElevate {
+    position: relative;
+    content: '';
+
+    transition: all 100ms ease-in-out;
+    top: 0;
+}
+
+.animationElevate:hover {
+    top: -1rem;
+}
+
+.animationElevate::after {
+    content: '';
+    position: absolute;
+
+
+}
+
+.animationElevate:hover::after {
+    width: 0;
+    height: 0;
+    border-top: 50px solid lightslategray;
+    border-right: 50px solid transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
