@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {User} from "../../features/user/user.ts";
 
 export const CardUser = () => {
@@ -18,5 +18,5 @@ export const CardUser = () => {
 
     }, []);
 
-    return( <p> Name: { user?.name?.first } { user?.name?.last } </p>)
+    return( <small> { user?.name?.first } { user?.name?.last } </small>)
 }
